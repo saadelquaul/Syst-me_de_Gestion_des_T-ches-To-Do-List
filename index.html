@@ -3,32 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>To-Do List</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="src/styling.css">
 </head>
-<body class="font-semibold">
-  <header class="w-full bg-sky-200 max-sm:h-[3.75rem]">
-    <div class=" flex justify-between items-center max-sm:pt-3">
-      <div class="flex items-center max-sm:ml-4"><a href="#">
-        <img src="src/imgs/logo_img/TaskFlow-logo.png" alt="" class="w-[6.25rem] ml-[1.25rem] max-sm:hidden"></a>
+<body class="max-w-[90rem] font-semibold bg-cyan-50 h-full overflow-x-hidden">
+  <header class="w-screen bg-gradient-to-r from-blue-500 to-purple-500 h-[3.75rem]">
+    <div class=" flex justify-between items-center pt-3">
+      <div class="flex items-center ml-5">
       <button class="ml-[.375rem] hover:scale-110 transition ease-in-out delay-150"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-9">
         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
       </svg>
       </button>
-      <button class="ml-[.375rem] hover:scale-110 transition ease-in-out delay-150 max-sm:ml-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
+      <button class="ml-[.625rem] hover:scale-110 transition ease-in-out delay-150"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
         <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
       </svg>
       </button>
       </div>
       
-      <div class="flex items-center"><i id="search"><label for="search"><input type="text" name="taskname" id="search" placeholder="Search for a task" class="bg-gray-200 h-[1.6875rem] text-center rounded-md" ></label></i>
-      <button class="hover:scale-110 transition ease-out delay-150"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-9 ml-[5px] ">
+      <div class="flex items-center mr-5"><label for="search"><i id="search"><input type="text" name="taskname" id="search" placeholder="Search for a task" class="bg-gray-200 h-[1.6875rem] text-center rounded-md max-sm:w-[160px] hidden"></i></label>
+      <button class="hover:scale-110 transition ease-in-out delay-150"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-9 ml-[5px] ">
         <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" />
       </svg></button>
     </div>
     </div>
     
   </header>
+  <main class="w-full">
+    <img src="src/imgs/bg-imgs/bg-img.png" alt="background_image" class="absolute z-[-1] bg-contain bg-no-repeat bg-center w-[700px] mt-[100px] min-h-[500px] flex justify-self-end">
+    </div>
+    <div class="max-w-[400px]">
+      <ul class="flex justify-between items-start pl-5 mt-5 max-sm:flex-wrap gap-2" >
+        <li class=""><button class="bg-amber-300 w-[6rem] h-20 rounded-md text-white max-md:h-[3rem] max-sm:h-[2.1875rem]">All tasks</button></li>
+        <li class=""><button class="bg-red-500 w-[6rem] h-20 rounded-md text-white max-md:h-[3rem] max-sm:h-[2.1875rem]">To Do</button></li>
+        <li class=""><button class="bg-pink-400 w-[6rem] h-20 rounded-md text-white max-md:h-[3rem] max-sm:h-[2.1875rem]" >In Progress</button></li>
+        <li><button class="bg-green-500 w-[6rem] h-20 rounded-md text-white max-md:h-[3rem] max-sm:h-[2.1875rem]">Done</button></li>
+      </ul>
+    </div>
+      <button class="group flex flex-col  items-end absolute right-7 top-44 "><span class="bg-purple-400 rounded-lg invisible text-white group-hover:visible max-sm:visible">Add a Task</span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-[50px] max-md:size-[40px] bg-purple-500 rounded-full text-white " >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+      </svg>
+      </button>
+  </main>
 
 </body>
 </html>
