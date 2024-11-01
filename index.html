@@ -21,7 +21,7 @@
       </button>
       </div>
       
-      <div class="flex items-center mr-5"><label for="search"><i id="search"><input type="text" name="taskname" id="search" placeholder="Search for a task" class="bg-gray-200 h-[1.6875rem] text-center rounded-md max-sm:w-[160px] hidden"></i></label>
+      <div class="flex items-center mr-5"><label for="search"><i id="search"><input type="text" name="taskname" id="search" placeholder="Search for a task" class="search bg-gray-200 h-[1.6875rem] text-center rounded-md max-sm:w-[160px] hidden"></i></label>
       <button class="hover:scale-110 transition ease-in-out delay-150"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-9 ml-[5px] ">
         <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" />
       </svg></button>
@@ -30,20 +30,126 @@
     
   </header>
   <main class="w-full">
+    <section class="backg ">
     <img src="src/imgs/bg-imgs/bg-img.png" alt="background_image" class="absolute z-[-1] bg-contain bg-no-repeat bg-center w-[700px] mt-[100px] min-h-[500px] flex justify-self-end">
-    </div>
     <div class="max-w-[400px]">
       <ul class="flex justify-between items-start pl-5 mt-5 max-sm:flex-wrap gap-2" >
-        <li class=""><button class="bg-amber-300 w-[6rem] h-20 rounded-md text-white max-md:h-[3rem] max-sm:h-[2.1875rem]">All tasks</button></li>
-        <li class=""><button class="bg-red-500 w-[6rem] h-20 rounded-md text-white max-md:h-[3rem] max-sm:h-[2.1875rem]">To Do</button></li>
-        <li class=""><button class="bg-pink-400 w-[6rem] h-20 rounded-md text-white max-md:h-[3rem] max-sm:h-[2.1875rem]" >In Progress</button></li>
-        <li><button class="bg-green-500 w-[6rem] h-20 rounded-md text-white max-md:h-[3rem] max-sm:h-[2.1875rem]">Done</button></li>
+        <li class="tasksBtn"><button class="bg-amber-300 w-[6rem] h-20 rounded-md text-white max-md:h-[3rem] max-sm:h-[2.1875rem]">All tasks</button></li>
+        <li class="toDoBtn"><button class="bg-red-500 w-[6rem] h-20 rounded-md text-white max-md:h-[3rem] max-sm:h-[2.1875rem]">To Do</button></li>
+        <li class="inPBtn"><button class="bg-pink-400 w-[6rem] h-20 rounded-md text-white max-md:h-[3rem] max-sm:h-[2.1875rem]" >In Progress</button></li>
+        <li class="doneBtn"><button class="bg-green-500 w-[6rem] h-20 rounded-md text-white max-md:h-[3rem] max-sm:h-[2.1875rem]">Done</button></li>
       </ul>
     </div>
-      <button class="group flex flex-col  items-end absolute right-7 top-44 "><span class="bg-purple-400 rounded-lg invisible text-white group-hover:visible max-sm:visible">Add a Task</span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-[50px] max-md:size-[40px] bg-purple-500 rounded-full text-white " >
+  </section>
+      <div><button class="addTask group flex flex-col  items-end absolute right-7 top-44 "><span class="bg-purple-400 rounded-lg invisible text-white group-hover:visible max-sm:visible">Add a Task</span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-[50px] max-md:size-[40px] bg-purple-500 rounded-full text-white " >
         <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
       </svg>
       </button>
+      <fieldset class="addTaskInfo mt-[30%] flex hidden h-[460px] w-[400px] ml-[30%] lg:ml-[40%] justify-center items-center rounded-lg border-gray-600 bg-gray-500 border-4 text-center max-md:w-[calc(100%-30%)] max-md:ml-[15%]  backdrop-blur-lg" ><legend class="bg-gray-600 text-white font-bold p-2 rounded-lg ">Enter Task Info</legend>
+        <form action="" class="flex flex-col ">
+          <label for="title" class="text-white font-bold">Task Title : </label><input type="text" name="title" id="title" class="textTitle bg-gray-700 text-white font-mono rounded-md h-8">
+          <label for="description" class="text-white font-bold">Description :</label><textarea name="description" id="description" maxlength="43"  class="description text-white font-mono rounded-md h-15 bg-gray-700"></textarea>
+          <label for="status" class="text-white font-bold">Status : </label><select name="status" id="status" class="status bg-gray-700 text-white font-mono rounded-md h-8 ">
+          <option value="to-do" class="bg-red-500">To Do</option>
+          <option value="in-progress" class="bg-orange-500">In Progress</option>
+          <option value="done" class="bg-green-500">Done</option></select>
+          <label for="dead-line" class="text-white font-bold">Dead Line :</label><input type="date" name="dead-Line" id="dead-line" class="deadLine text-white font-mono rounded-md h-15 bg-gray-700">
+          <div class="flex flex-col mt-3 gap-3">
+            <div class="flex justify-start"><input type="radio" name="Priority" id="p" class="p mr-2"><label for="p" class="bg-orange-300 text-w rounded-md">High Priority</label></div>
+            <div class="flex justify-start"><input type="radio" name="Priority" id="p2" class="p mr-2" checked><label for="p2" class="bg-blue-200 rounded-md text-w">Medium Priority</label>
+            </div>
+            <div class="flex justify-start"><input type="radio" name="Priority" id="p3" class="p mr-2"><label for="p3" class="bg-green-300 rounded-md text-w">Low Priority</label>
+            </div></div>
+          <div class="flex justify-evenly mt-3">
+            <button class="add rounded-md bg-blue-600 text-white w-20 h-8 ">Add</button>
+            <button class="cancel rounded-md bg-red-500 text-white w-20 h-8">Cancel</button>
+          </div>
+      </form></fieldset>
+      </div>
+      <section class="mt-[7rem] flex flex-wrap ">
+      <section class="toDo  h-auto mt-7 ml-7 "  >
+        
+        <div class="flex mb-3"><i class="z-10"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-9 fill-red-500">
+          <path fill-rule="evenodd" d="M9.75 6.75h-3a3 3 0 0 0-3 3v7.5a3 3 0 0 0 3 3h7.5a3 3 0 0 0 3-3v-7.5a3 3 0 0 0-3-3h-3V1.5a.75.75 0 0 0-1.5 0v5.25Zm0 0h1.5v5.69l1.72-1.72a.75.75 0 1 1 1.06 1.06l-3 3a.75.75 0 0 1-1.06 0l-3-3a.75.75 0 1 1 1.06-1.06l1.72 1.72V6.75Z" clip-rule="evenodd" />
+          <path d="M7.151 21.75a2.999 2.999 0 0 0 2.599 1.5h7.5a3 3 0 0 0 3-3v-7.5c0-1.11-.603-2.08-1.5-2.599v7.099a4.5 4.5 0 0 1-4.5 4.5H7.151Z" />
+          </svg>
+          </i><h1 class="font-extrabold text-3xl bg-red-500 rounded-md z-10">To Do<Data></Data></h1>
+        </div>
+        
+        
+        <div class=" taskInfo shadow-lg rounded-lg shadow-violet-700  contain-content border-solid border-2 border-purple-700 max-h-96 flex-wrap flex flex-col max-md:w-[calc(100%-20%)]  max-sm:min-w-[270px] md:w-[600px] bg-red-300 bg-opacity-50" >
+          <div class="flex flex-wrap items-center"><h3 class="ml-2 font-bold text-lg">Title :</h3><p class="ml-3 bg-slate-400 bg-opacity-40 font-mono">title</p><button class="showTaskInfo absolute right-4"><i><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+          </svg>
+          </i></button></div>
+          <div class="taskInfoByTitle">
+          <div class="h-14 flex flex-wrap items-center"><h3 class=" ml-2 font-bold text-lg">Description:</h3><p class="ml-3 bg-slate-400 bg-opacity-40 font-mono">Description</p></div>
+          <div class="h-14 flex flex-wrap items-center"><h3 class=" ml-2 font-bold text-lg">Status:</h3><p class="ml-3 bg-slate-400 bg-opacity-40 font-mono">Status</p></div>
+          <div class="h-14 flex flex-wrap items-center"><h3 class=" ml-2 font-bold text-lg">Dead Line:</h3><p class="ml-3 bg-slate-400 bg-opacity-40 font-mono text-violet-950">Dead Line</p></div>
+          <button class="absolute right-24 bottom-4 rounded-md bg-red-500 hover:bg-red-900   w-16 text-white">Delete</button><br>
+          <button class="absolute right-6 bottom-4 rounded-md bg-yellow-500 hover:bg-yellow-900   w-16 text-white">Edit</button>
+          <button class="closeTaskInfo ml-4 mb-4"><i><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+          </svg>
+          
+          </i></button>
+        </div>
+        </div>
+      </section>
+      <section class="inProgress h-auto mt-7 ml-7">
+        <div class="flex mb-3"><i class="z-10"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-9 fill-orange-500">
+          <path fill-rule="evenodd" d="M4.755 10.059a7.5 7.5 0 0 1 12.548-3.364l1.903 1.903h-3.183a.75.75 0 1 0 0 1.5h4.992a.75.75 0 0 0 .75-.75V4.356a.75.75 0 0 0-1.5 0v3.18l-1.9-1.9A9 9 0 0 0 3.306 9.67a.75.75 0 1 0 1.45.388Zm15.408 3.352a.75.75 0 0 0-.919.53 7.5 7.5 0 0 1-12.548 3.364l-1.902-1.903h3.183a.75.75 0 0 0 0-1.5H2.984a.75.75 0 0 0-.75.75v4.992a.75.75 0 0 0 1.5 0v-3.18l1.9 1.9a9 9 0 0 0 15.059-4.035.75.75 0 0 0-.53-.918Z" clip-rule="evenodd" />
+        </svg>        
+        </i><h1 class="font-extrabold text-3xl bg-orange-500 rounded-md z-10">In Progress</h1>
+      </div>
+        <div class="tasksInfo flex gap-7 flex-wrap">
+          <div class=" taskInfo shadow-lg rounded-lg shadow-violet-700 contain-content border-solid border-2 border-purple-700 max-h-96 flex-wrap flex flex-col max-md:w-[calc(100%-20%)]  max-sm:min-w-[270px] md:w-[600px] bg-orange-300 bg-opacity-50" >
+            <div class="flex flex-wrap items-center"><h3 class="ml-2 font-bold text-lg">Title :</h3><p class="ml-3 bg-slate-400 bg-opacity-40 font-mono">title</p><button class="showTaskInfo absolute right-4"><i><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+            </i></button></div>
+            <div class="taskInfoByTitle">
+            <div class="h-14 flex flex-wrap items-center"><h3 class=" ml-2 font-bold text-lg">Description:</h3><p class="ml-3 bg-slate-400 bg-opacity-40 font-mono">Description</p></div>
+            <div class="h-14 flex flex-wrap items-center"><h3 class=" ml-2 font-bold text-lg">Status:</h3><p class="ml-3 bg-slate-400 bg-opacity-40 font-mono">Status</p></div>
+            <div class="h-14 flex flex-wrap items-center"><h3 class=" ml-2 font-bold text-lg">Dead Line:</h3><p class="ml-3 bg-slate-400 bg-opacity-40 font-mono text-violet-950">Dead Line</p></div>
+            <button class="absolute right-24 bottom-4 rounded-md bg-red-500 hover:bg-red-900   w-16 text-white">Delete</button><br>
+            <button class="absolute right-6 bottom-4 rounded-md bg-yellow-500 hover:bg-yellow-900   w-16 text-white">Edit</button>
+            <button class="closeTaskInfo ml-4 mb-4"><i><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+            </svg>
+            
+            </i></button>
+          </div>
+          </div>
+          </div>
+      </section>
+      <section class="done h-auto mt-7 ml-7 hidden">
+        <div class="flex mb-3"><i class="z-10"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-9 fill-green-600">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0 1 18 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3 1.5 1.5 3-3.75" />
+        </svg>
+        </i><h1 class="font-extrabold text-3xl bg-green-500 rounded-md z-10">Done</h1></div>
+        <div class="tasksInfo flex gap-7 flex-wrap">
+          <div class=" taskInfo shadow-lg rounded-lg shadow-violet-700  contain-content border-solid border-2 border-purple-700 max-h-96 flex-wrap flex flex-col max-md:w-[calc(100%-20%)]  max-sm:min-w-[270px] md:w-[600px] bg-green-300 bg-opacity-50" >
+            <div class="flex flex-wrap items-center"><h3 class="ml-2 font-bold text-lg">Title :</h3><p class="ml-3 bg-slate-400 bg-opacity-40 font-mono">title</p><button class="showTaskInfo absolute right-4"><i><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+            </i></button></div>
+            <div class="taskInfoByTitle ">
+            <div class="h-14 flex flex-wrap items-center"><h3 class=" ml-2 font-bold text-lg">Description:</h3><p class="ml-3 bg-slate-400 bg-opacity-40 font-mono">Description</p></div>
+            <div class="h-14 flex flex-wrap items-center"><h3 class=" ml-2 font-bold text-lg">Status:</h3><p class="ml-3 bg-slate-400 bg-opacity-40 font-mono">Status</p></div>
+            <div class="h-14 flex flex-wrap items-center"><h3 class=" ml-2 font-bold text-lg">Dead Line:</h3><p class="ml-3 bg-slate-400 bg-opacity-40 font-mono text-violet-950">Dead Line</p></div>
+            <button class="absolute right-24 bottom-4 rounded-md bg-red-500 hover:bg-red-900   w-16 text-white">Delete</button><br>
+            <button class="absolute right-6 bottom-4 rounded-md bg-yellow-500 hover:bg-yellow-900   w-16 text-white">Edit</button>
+            <button class="closeTaskInfo ml-4 mb-4"><i><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+            </svg>
+            
+            </i></button>
+          </div>
+          </div>
+          </div>
+      </section>
+    </section>
   </main>
 
 </body>
