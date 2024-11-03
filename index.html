@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-Do List</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="src/styling.css" />
+    
   </head>
   <body class="max-w-[90rem] font-semibold bg-cyan-50 h-full overflow-x-hidden">
     <header
@@ -31,10 +31,9 @@
               />
             </svg>
           </button>
-          <a href="index.html"
-            ><button
+          <button
               class="ml-[.625rem] hover:scale-110 transition ease-in-out delay-150"
-            >
+            ><a href="index.html">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -48,21 +47,21 @@
                   stroke-linejoin="round"
                   d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
                 />
-              </svg></button
-          ></a>
+              </svg>
+            </a></button>
         </div>
 
         <div class="flex items-center mr-5">
           <label for="search"
-            ><i id="search"
-              ><input
+            ><i>
+              <input
                 type="text"
-                name="taskname"
+                name="taskName"
                 id="search"
                 placeholder="Search for a task"
-                class="search bg-gray-200 h-[1.6875rem] text-center rounded-md max-sm:w-[160px] hidden" /></i
+                class="bg-gray-200 h-[1.6875rem] text-center rounded-md max-sm:w-[160px] hidden" /></i
           ></label>
-          <button class="hover:scale-110 transition ease-in-out delay-150">
+          <button class="search hover:scale-110 transition ease-in-out delay-150">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -81,11 +80,11 @@
     </header>
     <main class="w-full">
       <section>
-        <div class="backg">
+        <div >
           <img
             src="src/imgs/bg-imgs/bg-img.png"
             alt="background_image"
-            class="absolute z-[-1] bg-contain bg-no-repeat bg-center w-[700px] mt-[100px] min-h-[500px] flex justify-self-end"
+            class="absolute z-[-1] backg bg-contain bg-no-repeat bg-center w-[700px] mt-[100px] min-h-[500px] flex justify-self-end"
           />
           <div class="max-w-[400px]">
             <ul
@@ -146,7 +145,7 @@
           </svg>
         </button>
         
-          <form action="" class="addTaskInfo p-3 mt-[5%] flex h-[530px] w-[400px] ml-[30%] lg:ml-[40%] justify-center items-center rounded-lg border-purple-800 tracking-widest bg-blue-200 border-4 text-center max-md:w-[calc(100%-30%)] max-md:ml-[15%] backdrop-blur-lg hidden">
+          <form action="#" class="addTaskInfo p-3 mt-[5%] flex h-[550px] w-[400px] ml-[30%] lg:ml-[40%] justify-center items-center rounded-lg border-purple-800 tracking-widest bg-blue-200 border-4 text-center max-md:w-[calc(100%-30%)] max-md:ml-[15%] backdrop-blur-lg hidden">
             <fieldset class="flex flex-col w-full">
           <legend class="bg-purple-800 text-white font-bold p-2 rounded-lg">
             Enter Task Info
@@ -203,7 +202,8 @@
                   name="Priority"
                   id="p"
                   class="p mr-2"
-                /><label for="p" class="bg-orange-300 text-w rounded-md"
+                  value="P1"
+                /><label for="p" class="bg-red-500 text-w p-1 rounded-md"
                   >High Priority</label
                 >
               </div>
@@ -213,8 +213,9 @@
                   name="Priority"
                   id="p2"
                   class="p mr-2"
+                  value="P2"
                   checked
-                /><label for="p2" class="bg-blue-300 rounded-md text-w"
+                /><label for="p2" class="bg-orange-500 p-1 rounded-md text-w"
                   >Medium Priority</label
                 >
               </div>
@@ -224,7 +225,8 @@
                   name="Priority"
                   id="p3"
                   class="p mr-2"
-                /><label for="p3" class="bg-green-300 rounded-md text-w"
+                  value="P3"
+                /><label for="p3" class="bg-green-500 rounded-md p-1 text-w"
                   >Low Priority</label
                 >
               </div>
@@ -242,7 +244,7 @@
         
       </div>
       <section class="mt-[7rem] flex flex-wrap">
-        <section class="toDo h-auto mt-7 ml-7 hidden">
+        <section class="toDo h-auto mt-7 ml-7  hidden">
           <div class="flex mb-3">
             <i class="z-10"
               ><svg
@@ -261,8 +263,8 @@
                 />
               </svg>
             </i>
-            <h1 class="font-extrabold text-3xl bg-red-500 rounded-md z-10">
-              To Do<data></data>
+            <h1 class="font-extrabold p-1 text-3xl bg-red-500 rounded-md z-10">
+              To Do :<span class="tasksNumber"> 0 </span>Tasks
             </h1>
           </div>
 
@@ -287,7 +289,7 @@
               </svg>
             </i>
             <h1 class="font-extrabold text-3xl bg-orange-500 rounded-md z-10">
-              In Progress
+              In Progress :<span class="tasksNumber"> 0 </span>Tasks
             </h1>
           </div>
           <div class="tasksInfo flex gap-7 flex-wrap">
@@ -313,7 +315,7 @@
               </svg>
             </i>
             <h1 class="font-extrabold text-3xl bg-green-500 rounded-md z-10">
-              Done
+              Done :<span class="tasksNumber"> 0 </span>Tasks
             </h1>
           </div>
           <div class="tasksInfo flex gap-7 flex-wrap">
